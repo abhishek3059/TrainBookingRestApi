@@ -1,0 +1,72 @@
+Problem Statement: Train Ticket Booking REST API
+You are tasked with developing a basic Train Ticket Booking REST API using Spring Boot, Spring Data JPA, and MySQL. The API will allow users to book train tickets, view available trains, and check their bookings. The application should include functionality for managing trains, passengers, and bookings.
+
+Additionally, the API should handle exceptions globally using a Global Exception Handler and follow best practices for RESTful API design. The project should focus on core features while remaining simple for ease of development.
+
+Functional Requirements:
+Train Management:
+
+View a list of all available trains.
+Add new trains to the system (with train number, name, source, destination, available seats, etc.).
+Update train details (like available seats after a booking).
+Delete a train.
+Passenger Management:
+
+Register new passengers (with basic details like name, age, contact details).
+View passenger details.
+Ticket Booking:
+
+Book a ticket for a specific train, which will:
+Deduct the number of available seats on the selected train.
+Create a booking entry that links a passenger to a train.
+Assign a ticket number.
+View booking details for a passenger (with train information and seat number).
+Cancel a booking, which will:
+Increase the available seats on the train.
+Delete the corresponding booking record.
+Booking History:
+
+View all bookings made by a specific passenger.
+Non-Functional Requirements:
+Global Exception Handling: Implement a centralized exception handling mechanism to handle scenarios like:
+
+Train not found.
+No available seats on a train.
+Passenger not found.
+Invalid booking request.
+Database Integration: Use MySQL as the database for persisting train, passenger, and booking data.
+
+Use Spring Data JPA for database operations.
+Validation: Ensure basic validation on input fields such as non-null values for train, passenger details, etc.
+
+API Endpoints: Ensure all endpoints follow REST conventions, using proper HTTP status codes and responses.
+
+Example Endpoints:
+Train Endpoints:
+
+GET /trains: Get all available trains.
+POST /trains: Add a new train.
+PUT /trains/{id}: Update train details.
+DELETE /trains/{id}: Delete a train.
+Passenger Endpoints:
+
+GET /passengers: Get all passengers.
+POST /passengers: Register a new passenger.
+GET /passengers/{id}: Get a specific passenger by ID.
+Booking Endpoints:
+
+POST /bookings: Book a ticket for a train.
+GET /bookings/{passengerId}: View bookings made by a specific passenger.
+DELETE /bookings/{id}: Cancel a booking.
+Constraints:
+Seat Availability: Ensure that ticket bookings are not allowed if there are no available seats on the train.
+Unique Constraints: Enforce uniqueness on certain fields such as train number and ticket number.
+Transaction Management: Handle seat deduction and booking creation as a single atomic operation to avoid data inconsistencies.
+Technologies:
+Spring Boot
+Spring Data JPA
+MySQL Database
+Hibernate (for ORM)
+Global Exception Handling with @ControllerAdvice
+Validation using annotations like @NotNull, @Min, @Max
+This problem statement provides a clear scope for developing a minimal yet functional Train Ticket Booking system while incorporating exception handling, basic validation, and proper database management.
