@@ -8,36 +8,41 @@ Train Management: CRUD operations for managing train information, including rout
 Booking Management: Users can book tickets, view their bookings, and cancel them if needed.
 Seat Availability: Check for available seats on specific trains before booking.
 Exception Handling: Comprehensive error handling with clear error messages for various exceptions.
+
 API Documentation: Auto-generated API documentation using Swagger for easy reference and testing.
-Technologies Used
+
+Technologies Used:-
 Spring Boot: For building the RESTful API.
 Spring Data JPA: For interacting with the MySQL database.
 MySQL: Database for storing user and booking information.
 Swagger: For API documentation and testing.
 Maven: Project management and dependency management.
-Getting Started
+
+Getting Started:-
+
 Prerequisites
 Java 11 or later
 MySQL server
 Maven
+
 Installation
 Clone the repository:
 
-bash
+1. bash
 Copy code
 git clone https://github.com/yourusername/train-ticket-booking-api.git
 cd train-ticket-booking-api
-Set up the MySQL database:
 
+2. Set up the MySQL database:
 Create a new MySQL database.
 Update the application.properties file with your database credentials.
-Run the application:
 
+3. Run the application:
 bash
 Copy code
 mvn spring-boot:run
-Access the API:
 
+Access the API:
 The API will be available at http://localhost:8080/api.
 API Documentation
 The API documentation is available at http://localhost:8080/swagger-ui.html.
