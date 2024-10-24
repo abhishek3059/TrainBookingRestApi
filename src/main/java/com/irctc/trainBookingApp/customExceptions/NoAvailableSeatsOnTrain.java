@@ -1,9 +1,16 @@
 package com.irctc.trainBookingApp.customExceptions;
 
-public class NoAvailableSeatsOnTrain extends Exception {
+import com.irctc.trainBookingApp.advice.ErrorResponse;
+
+import lombok.Data;
+@Data
+public class NoAvailableSeatsOnTrain extends RuntimeException {
 	
-	public NoAvailableSeatsOnTrain(String message) {
-		super();
+	public final ErrorResponse errorResoponse;
+	public NoAvailableSeatsOnTrain(String message , ErrorResponse errorResponse) {
+		super(message);
+		this.errorResoponse = errorResponse;
+		this.errorResoponse.setMessage(message);
 	}
 	
 

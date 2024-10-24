@@ -27,6 +27,10 @@ public class TrainController {
     public List<Train> getAllTrains() throws TrainNotFoundException {
         return trainService.getAllTrains();
     }
+    @GetMapping("/{trainNumber}")
+    public Train getTrainByTrainNo(@PathVariable String trainNumber){
+    	return trainService.trainByTrainNo(trainNumber);
+    }
 
     @PostMapping
     public Train addTrain(@RequestBody Train train) throws TrainAlreadyExistsException {

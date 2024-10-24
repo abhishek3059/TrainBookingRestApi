@@ -1,11 +1,16 @@
 package com.irctc.trainBookingApp.customExceptions;
 
-public class TrainAlreadyExistsException extends Exception{
+import com.irctc.trainBookingApp.advice.ErrorResponse;
 
-	public TrainAlreadyExistsException(String message) {
-		super();
-		
-		
+import lombok.Data;
+@Data
+public class TrainAlreadyExistsException extends RuntimeException{
+
+	public final ErrorResponse errorResoponse;
+	public TrainAlreadyExistsException(String message , ErrorResponse errorResponse) {
+		super(message);
+		this.errorResoponse = errorResponse;
+		this.errorResoponse.setMessage(message);
 	}
 	
 }

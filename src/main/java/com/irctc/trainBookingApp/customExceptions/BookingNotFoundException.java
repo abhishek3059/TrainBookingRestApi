@@ -1,11 +1,15 @@
 package com.irctc.trainBookingApp.customExceptions;
 
-public class BookingNotFoundException extends Exception{
+import com.irctc.trainBookingApp.advice.ErrorResponse;
 
-	public BookingNotFoundException(String message) {
-		super();
-		
-		
+import lombok.Data;
+@Data
+public class BookingNotFoundException extends RuntimeException{
+	public final ErrorResponse errorResoponse;
+	public BookingNotFoundException(String message , ErrorResponse errorResponse) {
+		super(message);
+		this.errorResoponse = errorResponse;
+		this.errorResoponse.setMessage(message);
 	}
 	
 }
